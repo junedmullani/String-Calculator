@@ -13,12 +13,16 @@ public class ExerciseTest {
     @Test
     public final void addwith2numbers() {
     	Exercise c=new Exercise();
-		c.add("1,2");
-        Assert.assertTrue(true);
+        Assert.assertEquals(3, c.add("1,2"));
     }
     @Test(expected = RuntimeException.class)
     public final void addwithchar() {
     	Exercise c=new Exercise();
 		c.add("1,X");
+    }
+    @Test
+    public final void emptyString() {
+    	Exercise c=new Exercise();
+        Assert.assertEquals(0, c.add(""));
     }
 }
